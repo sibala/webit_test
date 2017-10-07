@@ -9,7 +9,7 @@
 ## Användning
 1. Ladda ner,
 2. Skapa databas och koppla
-3. Kör migrations "php artisan migrate" i terminalen, alternativt importera db.sql
+3. Kör migrations "php artisan migrate" i terminalen, alternativt importera webit_test.sql
 4. Använd applikationen
 
 
