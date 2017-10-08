@@ -78,11 +78,13 @@ class BookPackageController extends Controller
     	$bookPackage->fixed_price = $request->fixedPackagePrice;
     	$bookPackage->save();
 
-    	foreach ($request->books as $bookId => $formField) {
-    		$book = Book::findOrFail($bookId);
-    		$book->title = $formField['bookTitle'];
-    		$book->price = $formField['bookPrice'];
-    		$book->save();
+    	if (isset($request->books)) {
+	    	foreach ($request->books as $bookId => $formField) {
+	    		$book = Book::findOrFail($bookId);
+	    		$book->title = $formField['bookTitle'];
+	    		$book->price = $formField['bookPrice'];
+	    		$book->save();
+	    	}
     	}
 
     	$bookPackages = BookPackage::all();
